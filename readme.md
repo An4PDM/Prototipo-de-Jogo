@@ -1,4 +1,5 @@
 *CRIAÇÃO DO AMBIENTE*
+
 Primeiro, é necessário importar o pygame no repositório com:
 import pygame
 from pygame.locals import *
@@ -17,7 +18,9 @@ Para o jogo não travar, é necessário ter um loop principal. O código abaixo 
 
 É DENTRO DO '''FOR''' QUE SE COLOCA OS EVENTOS QUE ACONTECEM DURANTE O JOGO!!!
 
+
 *CRIAÇÃO DE OBJETOS*
+
 Para a criação de objetos, deve-se utilizar a lógica do PLANO CARTESIANO. 
 X = EIXO HORIZONTAL; Y = EIXO VERTICAL (PARA BAIXO).
 Também é possível inserir cor no objeto, isso é feito com a sigla RGB(Red,Green,Blue), que varia de 0 a 255.
@@ -32,10 +35,12 @@ terceiro parâmetro = dois números para POSIÇÃO no local, e os últimos dois 
 
 ''''''''''''tela.fill((0,0,0))''''''''''' Para 'limpar' a tela quando o objeto anda.
 
+
 *OBJETO SE MOVE SOZINHO*
 if y>= altura:
     y = 0
 y = y + 1
+
 
 *OBJETO SENDO CONTROLADO, PORÉM SEM PRESSIONAR A TECLA*
 if event.type == KEYDOWN:
@@ -47,6 +52,7 @@ if event.type == KEYDOWN:
         y = y - 20
     if event.key == K_s:
         y = y + 20
+
 
 
 *OBJETO SENDO CONTROLADO COM PRESSÃO NA TECLA*
@@ -71,6 +77,7 @@ Neste caso, o objeto sai da tela. Para isso não acontecer, usar o código:
     if pygame.key.get_pressed()[K_s]:
         if y < (altura - 50):
             y += 20 
+
 
 
 *COLISÕES*
